@@ -21,7 +21,7 @@ def redirect_page_function():
     # google safe broswring api v4
     r_body =   {
     "client": {
-      "clientId":      "sggsanon-forum",
+      "clientId":      "cpshs-forum",
       "clientVersion": "1.0"
     },
     "threatInfo": {

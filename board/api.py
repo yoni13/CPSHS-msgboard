@@ -137,7 +137,7 @@ def send_email_code():
     "reg_code":str(code),
     "send_time":time.time()
     })
-    msg = Message('SGGS ANON 驗證碼', recipients=[email])
+    msg = Message('留言板驗證碼', recipients=[email])
     msg.body = '您的驗證碼是：' + str(code) +'，有效期為5分鐘。'
     mail.send(msg)
     return jsonify({"err": 0, "desc": "驗證碼已發送！"})
