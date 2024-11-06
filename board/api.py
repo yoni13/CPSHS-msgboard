@@ -15,16 +15,10 @@ api = Blueprint('api', __name__)
 @api.route('/api/v1/')
 def index():
     '''
-    This is the sggs-anon API v1
+    This is the msg board API v1
     '''
-    return 'This is the sggs-anon API v1'
+    return 'This is the msg board API v1'
 
-@api.route('/api/v1/bear')
-def bear():
-    '''
-    Api health test.
-    '''
-    return jsonify({"bear": "ʕ·ᴥ·ʔ"})
 
 @api.route('/api/v1/mb_board/')
 def mb_board():

@@ -55,7 +55,7 @@ if not os.path.isdir("tmp"):
 
 
 
-from sggsanon import api, moderation, static_files, frontend, opengraph, redirect_page
+from board import api, moderation, static_files, frontend, opengraph, redirect_page
 
 app.register_blueprint(api.api)
 app.register_blueprint(moderation.mod)

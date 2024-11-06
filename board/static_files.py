@@ -29,3 +29,5 @@ def robots():
         return redirect('/static/robots_dev.txt')
     if request.host == 'sggsanon.nicewhite.xyz':
         return redirect('/static/robots_prod.txt')
+    else:
+        return '',403
