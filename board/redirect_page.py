@@ -14,6 +14,7 @@ def redirect_page_function():
     '''
     Redirect page.
     '''
+    # This is a little unsecure, we should check the referer host
     if request.headers.get('referer') is None:
         return abort(403)
 
