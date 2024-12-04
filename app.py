@@ -63,7 +63,7 @@ TOKEN_URL = 'https://discord.com/api/oauth2/token'
 API_URL_BASE = 'https://discord.com/api/users/@me'
 
 
-from board import api, moderation, static_files, frontend, opengraph, redirect_page
+from board import api, moderation, static_files, frontend, opengraph, redirect_page, discordoauth
 
 app.register_blueprint(api.api)
 app.register_blueprint(moderation.mod)
