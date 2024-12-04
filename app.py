@@ -53,6 +53,14 @@ mail = Mail(app)
 if not os.path.isdir("tmp"):
     os.mkdir("tmp")
 
+# DISCORD
+OAUTH2_CLIENT_ID = os.environ['DISCORD_OAUTH_CLIENT_ID']  # Your CLIENT ID
+OAUTH2_CLIENT_SECRET = os.environ['DISCORD_OAUTH_CLIENT_SECURITE']  # Your CLIENT SECRET
+REDIRECT_URI = os.environ['DISCORD_OAUTH_REDIRECT_URL']
+
+AUTHORIZE_URL = os.environ['DISCORD_OAUTH_AUTH_URL']
+TOKEN_URL = 'https://discord.com/api/oauth2/token'
+API_URL_BASE = 'https://discord.com/api/users/@me'
 
 
 from board import api, moderation, static_files, frontend, opengraph, redirect_page
@@ -63,6 +71,7 @@ app.register_blueprint(static_files.static_files)
 app.register_blueprint(frontend.frontend)
 app.register_blueprint(opengraph.opengraph)
 app.register_blueprint(redirect_page.redirect_page)
+app.register_blueprint(discordoauth.discordoauth)
 
 
 if __name__ == "__main__":

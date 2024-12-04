@@ -70,7 +70,7 @@ def reg_handle():
         try:
             db.mb_user.insert_one({
                 "uname": uname,
-                "upass": hashlib.md5(upass.encode()).hexdigest(),
+                "upass": hashlib.sha256(upass.encode()).hexdigest(),
                 "email": email,
                 "reg_time": datetime.datetime.now(),
                 "last_login_time": datetime.datetime.now(),
@@ -291,8 +291,17 @@ def login_handle():
             abort(400)
 
         try:
+            isUsingOauth = db.mb_user.find_one({
+                "uname": uname,
+                "usingOauth":True
+            })
+            if isUsingOauth:
+                return '<script>alert("Please login using OAUTH！");history.back();</script>'
+        except:
+            pass
+        try:
             dbres = db.mb_user.find_one({
-                "upass": hashlib.md5(upass.encode()).hexdigest(),
+                "upass": hashlib.sha256(upass.encode()).hexdigest(),
                 "uname": uname,
             })
             if dbres:

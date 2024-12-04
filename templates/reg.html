@@ -16,7 +16,7 @@
     </div>
     <div id="reg_form">
         <form action="/reg" method="POST">
-            <input type="hidden" name="csrf_token" id="csrf_token" value="{{ csrf_token() }}"/>
+            <input type="hidden" name="csrf_token" id="csrf_token" value="{{ csrf_token() }}" />
             <table>
 
                 <tr>
@@ -46,6 +46,9 @@
                 </tr>
                 <tr>
                     <td><button type="submit">註冊</button></td>
+                    <td><button type="button"
+                            onclick="location.href='https://discord.com/oauth2/authorize?client_id=1311273540330197053&response_type=code&redirect_uri=https%3A%2F%2Findev-sggsanon.nicewhite.xyz%2Fauth%2Fdiscord%2Fcallback&scope=email+identify'">Login
+                            With Discord</button></td>
                 </tr>
             </table>
         </form>

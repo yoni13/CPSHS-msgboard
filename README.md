@@ -1,5 +1,7 @@
 # 竹北軟研留言板
 
+## Setup
+Check [setup.md](setup.md)
 
 ## 系統
 
