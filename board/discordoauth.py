@@ -8,6 +8,11 @@ from app import db
 
 discordoauth = Blueprint('discordoauth', __name__)
 
+
+@discordoauth.route('/auth/discord/getoauthroute')
+def getoauthroute():
+    return redirect(REDIRECT_URI)
+
 @discordoauth.route('/auth/discord/callback')
 def discord_callback():
     if session.get("user_info"):
