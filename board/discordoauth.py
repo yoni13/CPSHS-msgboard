@@ -31,6 +31,7 @@ def discord_callback():
     try:
         access_token = response.json()['access_token']
     except KeyError:
+        print(response.json())
         return "<script>alert('Erorr while trying to get userdata, perhaps try again?');history.back();</script>"
     headers = {
         'Authorization': f"Bearer {access_token}",
